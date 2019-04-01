@@ -1,4 +1,4 @@
-package io.zipcoder.crudapp.models;
+package io.zipcoder.crudapp;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,17 +12,17 @@ public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String fname;
-    private String lname;
+    private String firstName;
+    private String lastName;
 
     public Person(){}
 
-    public Person(String fname, String lname) {this(null, fname,lname);}
+    public Person(String firstName, String lastName) {this(null, firstName, lastName);}
 
-    public Person(Long id, String fname, String lname) {
+    public Person(Long id, String firstName, String lastName) {
         this.id = id;
-        this.fname = fname;
-        this.lname = lname;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public Long getId() {
@@ -33,19 +33,19 @@ public class Person {
         this.id = id;
     }
 
-    public String getFname() {
-        return fname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFname(String fname) {
-        this.fname = fname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLname() {
-        return lname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLname(String lname) {
-        this.lname = lname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }

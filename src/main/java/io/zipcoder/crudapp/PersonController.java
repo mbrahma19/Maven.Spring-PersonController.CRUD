@@ -1,7 +1,5 @@
-package io.zipcoder.crudapp.controllers;
+package io.zipcoder.crudapp;
 
-import io.zipcoder.crudapp.models.Person;
-import io.zipcoder.crudapp.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,8 +40,8 @@ public class PersonController {
     public ResponseEntity<Person> updatePerson(@RequestBody Person person){
         Long id = person.getId();
         Person originalPerson = repository.findOne(id);
-        originalPerson.setFname(person.getFname());
-        originalPerson.setLname(person.getLname());
+        originalPerson.setFirstName(person.getFirstName());
+        originalPerson.setLastName(person.getLastName());
         return new ResponseEntity<>(repository.save(originalPerson), HttpStatus.OK);
     }
 
